@@ -1,23 +1,25 @@
 #include<stdio.h>
-void cmp(int a, int b,int c,int *L)
+int cmp(int a,int b, int c)
 {
-  if(a>b && a>c)
-  *L=a;
-  else if(b>a && b>c)
-  *L=b;
-  else
-  *L=c;
+  if((a>b) && (a>c))
+  return a;
+  else if (b>c)
+  return b;
+  else 
+  return c;
 }
-void input(int*a,int*b,int*c)
+int input()
 {
-  printf("enter the three numbers\n");
-  scanf("%d%d%d",a,b,c);
+  int m;
+  printf("enter the 3 values\n");
+  scanf("%d",&m);
+  return m;
 }
 int main()
 {
-int a,b,c,L;
-input(&a,&b,&c);
-cmp(a,b,c,&L);
-printf("the Largest among the is %d\n",L);
-return 0;
+  int a,b,c;
+  a=input();
+  b=input();
+  c=input();
+  printf("the greatest value is %d\n",cmp(a,b,c));
 }
