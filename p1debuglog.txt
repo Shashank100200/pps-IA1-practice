@@ -1,0 +1,51 @@
+Breakpoint 1 at 0x7fc: file p1final.c, line 16.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1final.c:16
+16  {
+(gdb) n
+18    input(&a,&b);
+(gdb) s
+input (a=0x7ffe433d0e5c, b=0x7ffe433d0e60) at p1final.c:4
+4     printf("enter the two numbers\n");
+(gdb) n
+enter the two numbers
+5     scanf("%d%d",a,b);
+(gdb) n
+2
+489
+6   }
+(gdb) n
+main () at p1final.c:19
+19    add(a,b,&sum);
+(gdb) s
+add (a=2, b=489, sum=0x7ffe433d0e64) at p1final.c:9
+9     *sum=a+b;
+(gdb) n
+10  }
+(gdb) n
+main () at p1final.c:20
+20    output(a,b,sum);
+(gdb) s
+output (a=2, b=489, sum=491) at p1final.c:13
+13    printf("the sum of %d + %d is %d\n",a,b,sum);
+(gdb) p sum
+$1 = 491
+(gdb) n
+the sum of 2 + 489 is 491
+14  }
+(gdb) n
+main () at p1final.c:21
+21  }(gdb) n
+__libc_start_main (main=0x556b614007f4 <main>, argc=1, argv=0x7ffe433d0f58, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffe433d0f48) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 197] will be killed.
+
+Quit anyway? (y or n) y
